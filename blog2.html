@@ -1,1 +1,176 @@
+---
+layout: null
+title: Journal
+permalink: /blog2/
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Journal | Quiet Frames</title>
+  <style>
+    body {
+      margin: 0;
+      background: #F4F7CF;
+      color: #191C1D;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    header {
+      background: #FFFFFF;
+      padding: 22px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #d4d4d4;
+    }
+
+    .logo, nav a {
+      color: #191C1D;
+      text-decoration: none;
+    }
+
+    .logo {
+      font: 30px Georgia, serif;
+    }
+
+    nav {
+      display: flex;
+      gap: 28px;
+    }
+
+    main {
+      padding: 48px 5% 0;
+    }
+
+    .intro {
+      text-align: center;
+      padding: 30px 0 48px;
+    }
+
+    .intro p {
+      color: #4E6264;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
+
+    h1, h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: normal;
+    }
+
+    h1 {
+      font-size: clamp(36px, 5vw, 56px);
+      margin: 12px 0;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 28px;
+    }
+
+    .category {
+      display: block;
+      padding: 28px 0;
+      border-top: 1px solid #c9d0a9;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .category h2 {
+      font-size: 30px;
+      margin: 0 0 8px;
+    }
+
+    .category p {
+      font-size: 14px;
+      color: #424849;
+    }
+
+    .category span {
+      color: #9C647A;
+      font-size: 13px;
+    }
+
+    footer {
+      margin-top: 48px;
+      padding: 36px 5%;
+      background: #F3C8EE;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        align-items: flex-start;
+        gap: 16px;
+        flex-direction: column;
+      }
+
+      nav {
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+
+      main {
+        padding: 28px 24px 0;
+      }
+
+      .categories {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="{{ '/' | relative_url }}">Quiet Frames</a>
+    <nav>
+      <a href="{{ '/' | relative_url }}">Portfolio</a>
+      <a href="{{ '/blog2/' | relative_url }}">Journal</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <p>A Personal Journal</p>
+      <h1>Little Things, Lasting Memories</h1>
+      <div>Films I watch, books I read, places I visit, thoughts I keep.</div>
+    </section>
+
+    <section class="categories">
+      <a class="category" href="{{ '/films/' | relative_url }}">
+        <h2>Films</h2>
+        <p>Films that stay with me, organized by emotion and memory.</p>
+        <span>Explore films →</span>
+      </a>
+
+      <a class="category" href="{{ '/books/' | relative_url }}">
+        <h2>Books</h2>
+        <p>Reading notes, favorite passages and books worth revisiting.</p>
+        <span>Explore books →</span>
+      </a>
+
+      <a class="category" href="{{ '/travel/' | relative_url }}">
+        <h2>Travel</h2>
+        <p>Places, photographs and stories collected along the way.</p>
+        <span>Explore travel →</span>
+      </a>
+
+      <a class="category" href="{{ '/reflections/' | relative_url }}">
+        <h2>Reflections</h2>
+        <p>Personal essays, observations and thoughts from everyday life.</p>
+        <span>Read reflections →</span>
+      </a>
+    </section>
+  </main>
+
+  <footer>
+    <h2>Quiet Frames</h2>
+    <p>A little space for everything worth remembering.</p>
+  </footer>
+</body>
+</html>
 
