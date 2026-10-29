@@ -40,6 +40,7 @@ minima:
   nav_pages:
     - about.md
     - projects.md
+    - blog.html
     - contact.md
 
   # Set to `true` to show excerpts on the homepage.
