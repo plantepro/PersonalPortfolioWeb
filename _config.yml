@@ -41,6 +41,7 @@ minima:
     - about.md
     - projects.md
     - blog.html
+    - blog2.html
     - contact.md
 
   # Set to `true` to show excerpts on the homepage.
