@@ -471,7 +471,7 @@ permalink: /blog/
         </article>
 
         <article class="post">
-          <a href="#personal">
+          <a href="{{ '/blog2/' | relative_url }}">
             <img
               class="post-image"
               src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1000&q=85"
@@ -479,18 +479,26 @@ permalink: /blog/
               loading="lazy"
             >
           </a>
+        
           <div class="post-meta">
             <time datetime="2026-08-01">Aug 2026</time>
             <span class="tag pink">Travel &amp; Life</span>
           </div>
-          <h3 id="personal">
-            <a href="#personal">Things Worth Remembering</a>
+        
+          <h3>
+            <a href="{{ '/blog2/' | relative_url }}">
+              Things Worth Remembering
+            </a>
           </h3>
+        
           <p class="post-description">
             Books, photography, travel and little moments
             collected along the way.
           </p>
-          <a class="read-more" href="#personal">Read more →</a>
+        
+          <a class="read-more" href="{{ '/blog2/' | relative_url }}">
+            Read more →
+          </a>
         </article>
 
       </div>
