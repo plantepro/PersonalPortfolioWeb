@@ -3,9 +3,9 @@ function Home() {
     <main className="hero">
       <img
         className="hero-image"
-        src="/portfolio-hero.png"
+        src={`${import.meta.env.BASE_URL}portfolio-hero.png`}
         alt="Vivian reading with a cat"
-      />
+        />
 
       <h1 className="portfolio-title">
         Portfolio
