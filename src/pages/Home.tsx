@@ -5,11 +5,9 @@ function Home() {
         className="hero-image"
         src={`${import.meta.env.BASE_URL}portfolio-hero.png`}
         alt="Vivian reading with a cat"
-        />
+      />
 
-      <h1 className="portfolio-title">
-        Portfolio
-      </h1>
+      <h1 className="portfolio-title">Portfolio</h1>
 
       <div className="intro">
         <div>Data Engineer</div>
