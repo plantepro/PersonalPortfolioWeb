@@ -18,6 +18,9 @@ function PoemEntry() {
         intro={poem.excerpt}
       >
         <article className="poem-article">
+          {poem.dedication && (
+            <p className="poem-article__dedication">{poem.dedication}</p>
+          )}
           <p className="poem-article__meta">
             {poem.author && <span>{poem.author}</span>}
             {poem.language && <span>{poem.language}</span>}

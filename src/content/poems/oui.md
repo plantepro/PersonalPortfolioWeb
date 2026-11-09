@@ -1,9 +1,8 @@
 ---
 title: "Oui"
-author: "Xuan Wang"
-language: "French"
-year: ""
+year: "2025-08-26"
 excerpt: ""
+dedication: "—— À ma très chère amie, Cia."
 ---
 La veille de sa mort,
 j’ai vu défiler sa vie devant mes yeux.
@@ -65,8 +64,8 @@ comme si personne ne pouvait voir sa misère.
 
 J’ai vu l’alcool cautériser son cœur,
 ronger ses nerfs, brûler ses veines.
-Des blessures pareilles ne guérissent pas en quelques heures;
-Elles s’attardent, profondes, et laissent leurs chaînes.
+De telles blessures ne guérissent pas en quelques heures ;
+elles s’attardent, profondes, et laissent leurs traces.
 
 Et avant même que les plaies ne se referment,
 de nouvelles maladies apparaissaient,

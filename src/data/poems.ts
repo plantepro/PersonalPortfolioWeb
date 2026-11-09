@@ -5,6 +5,7 @@ export type Poem = {
   language?: string;
   year?: string;
   excerpt: string;
+  dedication?: string;
   body: string;
 };
 
@@ -14,6 +15,7 @@ type Frontmatter = {
   language?: string;
   year?: string;
   excerpt?: string;
+  dedication?: string;
 };
 
 const poemFiles = import.meta.glob<string>("../content/poems/*.md", {
@@ -42,7 +44,9 @@ function parsePoemMarkdown(markdown: string) {
 
   const frontmatter: Frontmatter = {};
   for (const line of match[1].split(/\r?\n/)) {
-    const field = line.match(/^(title|author|language|year|excerpt):\s*(.*)$/);
+    const field = line.match(
+      /^(title|author|language|year|excerpt|dedication):\s*(.*)$/,
+    );
     if (field) {
       frontmatter[field[1] as keyof Frontmatter] = unquote(field[2]);
     }
@@ -58,6 +62,7 @@ function parsePoemMarkdown(markdown: string) {
     ...(frontmatter.language ? { language: frontmatter.language } : {}),
     ...(frontmatter.year ? { year: frontmatter.year } : {}),
     excerpt: frontmatter.excerpt,
+    ...(frontmatter.dedication ? { dedication: frontmatter.dedication } : {}),
     body: match[2],
   };
 }
