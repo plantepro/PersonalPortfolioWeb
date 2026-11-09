@@ -7,7 +7,7 @@ function Journal() {
     <div className="journal-page">
       <SecondaryPageLayout
         eyebrow="Quiet Frames · A Personal Journal"
-        title="念念不忘 必有回响"
+        title="念念不忘，必有回響"
         intro="Revoke the color-faded memories."
       >
         <div className="journal-categories" aria-label="Journal categories">
