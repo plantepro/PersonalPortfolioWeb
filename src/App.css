@@ -66,13 +66,13 @@
 .hero-image {
   position: absolute;
 
-  width: 1050px;
+  width: 135vw;
   max-width: none;
 
   height: auto;
 
   left: 50%;
-  top: 50%;
+  top: 48%;
 
   transform: translate(-50%, -50%);
 
@@ -99,7 +99,7 @@
     Arial,
     sans-serif;
 
-  font-size: 145px;
+  font-size: clamp(120px, 13vw, 220px);
 
   font-weight: 300;
 
