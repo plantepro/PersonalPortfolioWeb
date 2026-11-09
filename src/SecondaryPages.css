@@ -178,8 +178,20 @@
 }
 
 .journal-category {
+  display: block;
   padding-block: clamp(1.8rem, 4vh, 2.8rem);
   border-bottom: 1px solid rgb(25 28 29 / 18%);
+  color: inherit;
+  text-decoration: none;
+}
+
+.journal-category h2 {
+  transition: color 0.18s ease;
+}
+
+.journal-category:hover h2,
+.journal-category:focus-visible h2 {
+  color: #1455e6;
 }
 
 .journal-category p {
@@ -188,6 +200,201 @@
   color: #657072;
   font-size: 0.98rem;
   line-height: 1.7;
+}
+
+.journal-archive-entry {
+  display: grid;
+  grid-template-columns: minmax(9rem, 0.72fr) minmax(0, 2fr);
+  gap: clamp(2rem, 7vw, 7rem);
+  padding-block: clamp(2rem, 5vh, 3.5rem);
+  border-bottom: 1px solid rgb(25 28 29 / 18%);
+}
+
+.journal-archive-entry__date {
+  margin: 0.4rem 0 0;
+  color: #657072;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.journal-archive-entry h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.6rem, 2.8vw, 2.25rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.journal-archive-entry h2 a {
+  color: #191c1d;
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+}
+
+.journal-archive-entry h2 a:hover,
+.journal-archive-entry h2 a:focus-visible {
+  color: #1455e6;
+  text-decoration: underline;
+}
+
+.journal-archive-entry div > p {
+  max-width: 38rem;
+  margin: 0.75rem 0 0;
+  color: #657072;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.journal-read {
+  display: inline-block;
+  margin-top: 1rem;
+  color: #1455e6;
+  font-size: 0.9rem;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.journal-read:hover,
+.journal-read:focus-visible {
+  color: #191c1d;
+}
+
+.journal-article {
+  max-width: 48rem;
+  padding-block: clamp(2rem, 5vh, 3.5rem);
+}
+
+.journal-article__meta {
+  margin: 0 0 2rem;
+  color: #657072;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.journal-article__body p {
+  margin: 0;
+  color: #444b4d;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  line-height: 1.85;
+}
+
+.journal-back {
+  display: inline-block;
+  margin-top: clamp(1.5rem, 4vh, 2.5rem);
+  color: #1455e6;
+  font-size: 0.9rem;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+/* Poems archive and individual poem pages */
+.poem-archive-entry {
+  display: grid;
+  grid-template-columns: minmax(6rem, 0.55fr) minmax(0, 2fr);
+  gap: clamp(1.5rem, 6vw, 6rem);
+  padding-block: clamp(2rem, 5vh, 3.5rem);
+  border-bottom: 1px solid rgb(25 28 29 / 18%);
+}
+
+.poem-archive-entry--undated {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.poem-archive-entry__year,
+.poem-article__meta {
+  margin: 0.35rem 0 0;
+  color: #657072;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.poem-archive-entry h2 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.65rem, 2.8vw, 2.3rem);
+  font-weight: 400;
+  letter-spacing: -0.035em;
+  line-height: 1.15;
+}
+
+.poem-archive-entry h2 a {
+  color: #191c1d;
+  text-decoration: none;
+  text-underline-offset: 0.2em;
+}
+
+.poem-archive-entry h2 a:hover,
+.poem-archive-entry h2 a:focus-visible {
+  color: #1455e6;
+  text-decoration: underline;
+}
+
+.poem-archive-entry__content > p {
+  max-width: 40rem;
+  margin: 0.8rem 0 0;
+  color: #657072;
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
+.poem-read,
+.poem-back {
+  display: inline-block;
+  color: #1455e6;
+  font-size: 0.9rem;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+.poem-read {
+  margin-top: 1rem;
+}
+
+.poem-read:hover,
+.poem-read:focus-visible,
+.poem-back:hover,
+.poem-back:focus-visible {
+  color: #191c1d;
+}
+
+.poem-archive__empty {
+  margin: 0;
+  padding-block: clamp(2rem, 5vh, 3.5rem);
+  color: #657072;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.15rem, 1.8vw, 1.4rem);
+  line-height: 1.7;
+}
+
+.poem-article {
+  max-width: 48rem;
+  padding-block: clamp(2rem, 5vh, 3.5rem);
+}
+
+.poem-article__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 0 0 clamp(1.5rem, 4vh, 2.5rem);
+}
+
+.poem-article__body {
+  color: #303638;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.08rem, 1.45vw, 1.28rem);
+  line-height: 1.85;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  tab-size: 2;
+}
+
+.poem-back {
+  margin-top: clamp(1.5rem, 4vh, 2.5rem);
 }
 
 .contact-links {
@@ -230,9 +437,16 @@
   }
 
   .editorial-section,
-  .project-entry {
+  .project-entry,
+  .journal-archive-entry {
     grid-template-columns: 1fr;
     gap: 1.1rem;
+  }
+
+  .poem-archive-entry,
+  .poem-archive-entry--undated {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
   }
 
   .journal-categories {

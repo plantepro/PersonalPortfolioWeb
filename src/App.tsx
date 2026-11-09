@@ -4,6 +4,10 @@ import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import Journal from "./pages/Journal";
+import JournalCategory from "./pages/JournalCategory";
+import JournalEntry from "./pages/JournalEntry";
+import PoemsArchive from "./pages/PoemsArchive";
+import PoemEntry from "./pages/PoemEntry";
 import Projects from "./pages/Projects";
 import "./App.css";
 
@@ -16,7 +20,13 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
-          <Route path="/journal" element={<Journal />} />
+          <Route path="/journal">
+            <Route index element={<Journal />} />
+            <Route path="poems" element={<PoemsArchive />} />
+            <Route path="poems/:slug" element={<PoemEntry />} />
+            <Route path=":category" element={<JournalCategory />} />
+            <Route path=":category/:entryId" element={<JournalEntry />} />
+          </Route>
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
