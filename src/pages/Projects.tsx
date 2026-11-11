@@ -1,6 +1,19 @@
 import SecondaryPageLayout from "../components/SecondaryPageLayout";
+import FigmaEmbed from "../components/FigmaEmbed";
 
-const projects = [
+type Project = {
+  title: string;
+  type: string;
+  description: string;
+  stack?: string;
+  links: { label: string; href: string }[];
+  figmaUrl?: string;
+  mobileFigmaUrl?: string;
+  desktopFigmaUrl?: string;
+  technicalHighlights?: string[];
+};
+
+const projects: Project[] = [
   {
     title: "Superwish",
     type: "E-commerce · Educational toys",
@@ -66,6 +79,24 @@ const projects = [
       },
     ],
   },
+  {
+    title: "Mélo",
+    type: "Furniture e-commerce · UI & UX Design",
+    technicalHighlights: [
+      "Component-Based Architecture",
+      "Responsive Design",
+      "Cross-Platform Development",
+      "Data-Driven UI",
+      "API-Oriented Architecture",
+    ],
+    description:
+      "A modern and youthful furniture shopping experience designed for people who want to bring contemporary style into their everyday spaces.",
+    links: [],
+    mobileFigmaUrl:
+      "https://embed.figma.com/proto/qoIF2eO3wu0rVdCv7NP20l/cig_ex-formatif_2?node-id=8897-427&page-id=603%3A18&starting-point-node-id=8897%3A427&embed-host=share",
+    desktopFigmaUrl:
+      "https://embed.figma.com/proto/qoIF2eO3wu0rVdCv7NP20l/cig_ex-formatif_2?node-id=8926-1506&page-id=603%3A18&starting-point-node-id=8897%3A427&scaling=min-zoom&content-scaling=fixed&embed-host=share",
+  },
 ];
 
 function Projects() {
@@ -78,18 +109,29 @@ function Projects() {
       <div className="project-list">
         {projects.map((project, index) => (
           <article className="project-entry" key={project.title}>
-            <div>
+            <div className="project-entry__heading">
               <span className="project-entry__index">
                 {String(index + 1).padStart(2, "0")}
               </span>
               <h2>{project.title}</h2>
               <p className="project-entry__type">{project.type}</p>
             </div>
-            <div>
+            <div className="project-entry__content">
               <p className="project-entry__description">
                 {project.description}
               </p>
-              <p className="project-entry__stack">{project.stack}</p>
+              {project.technicalHighlights && (
+                <section
+                  className="project-entry__highlights"
+                  aria-label="Technical Highlights"
+                >
+                  <h3>Technical Highlights</h3>
+                  <p>{project.technicalHighlights.join(" · ")}</p>
+                </section>
+              )}
+              {project.stack && (
+                <p className="project-entry__stack">{project.stack}</p>
+              )}
               <div className="project-entry__links">
                 {project.links.map((link) => (
                   <a
@@ -103,6 +145,15 @@ function Projects() {
                   </a>
                 ))}
               </div>
+              {(project.figmaUrl ||
+                (project.mobileFigmaUrl && project.desktopFigmaUrl)) && (
+                <FigmaEmbed
+                  figmaUrl={project.figmaUrl}
+                  mobileFigmaUrl={project.mobileFigmaUrl}
+                  desktopFigmaUrl={project.desktopFigmaUrl}
+                  title={project.title}
+                />
+              )}
             </div>
           </article>
         ))}
