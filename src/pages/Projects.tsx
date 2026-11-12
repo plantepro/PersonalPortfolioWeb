@@ -97,6 +97,24 @@ const projects: Project[] = [
     desktopFigmaUrl:
       "https://embed.figma.com/proto/qoIF2eO3wu0rVdCv7NP20l/cig_ex-formatif_2?node-id=8926-1506&page-id=603%3A18&starting-point-node-id=8897%3A427&scaling=min-zoom&content-scaling=fixed&embed-host=share",
   },
+  {
+    title: "Quite Frames",
+    type: "Film & Photography Website · HTML & CSS",
+    description:
+      "A minimalist film and photography website built with HTML and CSS, featuring a curated collection of films and a visual gallery.",
+    stack:
+      "HTML5 · CSS3 · Responsive Web Design · Git/GitHub · Vercel · Static Web Deployment",
+    links: [
+      {
+        label: "Live website",
+        href: "https://quiteframes.vercel.app",
+      },
+      {
+        label: "GitHub repository",
+        href: "https://github.com/plantepro/QuiteFrames",
+      },
+    ],
+  },
 ];
 
 function Projects() {
