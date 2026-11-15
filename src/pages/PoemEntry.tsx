@@ -13,7 +13,7 @@ function PoemEntry() {
   return (
     <div className="journal-page">
       <SecondaryPageLayout
-        eyebrow="Quiet Frames · Poems"
+        eyebrow="Quiet Frames · Poem"
         title={poem.title}
         intro={poem.excerpt}
       >
@@ -29,7 +29,7 @@ function PoemEntry() {
           <div className="poem-article__body">{poem.body}</div>
         </article>
         <Link className="poem-back" to="/journal/poems">
-          ← Back to Poems
+          ← Back to Poem
         </Link>
       </SecondaryPageLayout>
     </div>

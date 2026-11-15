@@ -20,7 +20,15 @@ function JournalEntry() {
       <SecondaryPageLayout
         eyebrow={`Quiet Frames · ${category.title}`}
         title={entry.title}
-        intro={entry.description}
+        intro={
+          entry.inspiration ? (
+            <>
+              After {entry.inspiration.author}’s <em>{entry.inspiration.work}</em>
+            </>
+          ) : (
+            entry.description
+          )
+        }
       >
         <article className="journal-article">
           <p className="journal-article__meta">

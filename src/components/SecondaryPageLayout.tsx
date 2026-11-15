@@ -4,7 +4,7 @@ import "../SecondaryPages.css";
 type SecondaryPageLayoutProps = {
   eyebrow: string;
   title: string;
-  intro?: string;
+  intro?: ReactNode;
   children: ReactNode;
 };
 

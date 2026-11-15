@@ -11,16 +11,18 @@ function Journal() {
         intro="Revoke the color-faded memories."
       >
         <div className="journal-categories" aria-label="Journal categories">
-          {journalCategories.map((category) => (
-            <Link
-              className="journal-category"
-              key={category.slug}
-              to={`/journal/${category.slug}`}
-            >
-              <h2>{category.title}</h2>
-              <p>{category.description}</p>
-            </Link>
-          ))}
+          {journalCategories
+            .filter((category) => !category.parentSlug)
+            .map((category) => (
+              <Link
+                className="journal-category"
+                key={category.slug}
+                to={`/journal/${category.slug}`}
+              >
+                <h2>{category.title}</h2>
+                <p>{category.description}</p>
+              </Link>
+            ))}
         </div>
       </SecondaryPageLayout>
     </div>

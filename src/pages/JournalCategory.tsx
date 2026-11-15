@@ -1,6 +1,6 @@
 import { Link, Navigate, useParams } from "react-router-dom";
 import SecondaryPageLayout from "../components/SecondaryPageLayout";
-import { findJournalCategory } from "../data/journal";
+import { findJournalCategory, journalCategories } from "../data/journal";
 
 function JournalCategory() {
   const { category: categorySlug } = useParams();
@@ -10,6 +10,10 @@ function JournalCategory() {
     return <Navigate to="/journal" replace />;
   }
 
+  const childCategories = journalCategories.filter(
+    (candidate) => candidate.parentSlug === category.slug,
+  );
+
   return (
     <div className="journal-page">
       <SecondaryPageLayout
@@ -17,29 +21,47 @@ function JournalCategory() {
         title={category.title}
         intro={category.intro}
       >
-        <div className="journal-archive">
-          {category.entries.map((entry) => (
-            <article className="journal-archive-entry" key={entry.slug}>
-              <p className="journal-archive-entry__date">
-                <time>{entry.date}</time>
-              </p>
-              <div>
-                <h2>
-                  <Link to={`/journal/${category.slug}/${entry.slug}`}>
-                    {entry.title}
+        {childCategories.length > 0 ? (
+          <div
+            className="journal-categories"
+            aria-label={`${category.title} categories`}
+          >
+            {childCategories.map((childCategory) => (
+              <Link
+                className="journal-category"
+                key={childCategory.slug}
+                to={`/journal/${childCategory.slug}`}
+              >
+                <h2>{childCategory.title}</h2>
+                <p>{childCategory.description}</p>
+              </Link>
+            ))}
+          </div>
+        ) : (
+          <div className="journal-archive">
+            {category.entries.map((entry) => (
+              <article className="journal-archive-entry" key={entry.slug}>
+                <p className="journal-archive-entry__date">
+                  <time>{entry.date}</time>
+                </p>
+                <div>
+                  <h2>
+                    <Link to={`/journal/${category.slug}/${entry.slug}`}>
+                      {entry.title}
+                    </Link>
+                  </h2>
+                  <p>{entry.description}</p>
+                  <Link
+                    className="journal-read"
+                    to={`/journal/${category.slug}/${entry.slug}`}
+                  >
+                    Read <span aria-hidden="true">→</span>
                   </Link>
-                </h2>
-                <p>{entry.description}</p>
-                <Link
-                  className="journal-read"
-                  to={`/journal/${category.slug}/${entry.slug}`}
-                >
-                  Read <span aria-hidden="true">→</span>
-                </Link>
-              </div>
-            </article>
-          ))}
-        </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        )}
         <Link className="journal-back" to="/journal">
           ← All journal categories
         </Link>

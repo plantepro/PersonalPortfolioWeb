@@ -48,8 +48,8 @@ function PoemsArchive() {
             The archive is ready for poems.
           </p>
         )}
-        <Link className="poem-back" to="/journal">
-          ← All journal categories
+        <Link className="poem-back" to="/journal/writing">
+          ← 随笔
         </Link>
       </SecondaryPageLayout>
     </div>
