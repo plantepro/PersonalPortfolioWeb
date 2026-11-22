@@ -46,6 +46,15 @@ export const journalCategories: JournalCategory[] = [
           "A future collection of memorable scenes and the details that make them resonate.",
         body: placeholderBody,
       },
+      {
+        slug: "after-love-2020",
+        title: "After Love",
+        date: "Date to come",
+        description: "2020",
+        body: [
+          "清澈的空气中闪烁着清新的星，树梢上是静谧的柠檬和璀璨的蝉鸣。今天是满月，在Pakistan，在Lahore，这座爱之城。Mary，许我问你，在今夜，你是否也在同我望着一样的月，并满心欢喜？",
+        ],
+      },
     ],
   },
   {
