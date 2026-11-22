@@ -13,6 +13,9 @@ function JournalCategory() {
   const childCategories = journalCategories.filter(
     (candidate) => candidate.parentSlug === category.slug,
   );
+  const isImageArchive =
+    category.parentSlug === "films" || category.parentSlug === "books";
+  const imageLabel = category.parentSlug === "books" ? "book cover" : "poster";
 
   return (
     <div className="journal-page">
@@ -39,12 +42,45 @@ function JournalCategory() {
           </div>
         ) : (
           <div className="journal-archive">
-            {category.entries.map((entry) => (
-              <article className="journal-archive-entry" key={entry.slug}>
-                <p className="journal-archive-entry__date">
-                  <time>{entry.date}</time>
-                </p>
-                <div>
+            {category.entries.map((entry) => {
+              const imageSource = entry.cover ?? entry.poster;
+
+              return (
+              <article
+                className={`journal-archive-entry${
+                  isImageArchive ? " journal-archive-entry--with-artwork" : ""
+                }`}
+                key={entry.slug}
+              >
+                {isImageArchive && (
+                  <div className="journal-entry-artwork">
+                    {imageSource ? (
+                      <img
+                        src={imageSource}
+                        alt={`${entry.title} ${imageLabel}`}
+                      />
+                    ) : (
+                      <div
+                        className="journal-entry-artwork__placeholder"
+                        role="img"
+                        aria-label={`${entry.title} ${imageLabel} placeholder`}
+                      >
+                        <span>{imageLabel === "book cover" ? "Cover to come" : "Poster to come"}</span>
+                      </div>
+                    )}
+                  </div>
+                )}
+                {!isImageArchive && (
+                  <p className="journal-archive-entry__date">
+                    <time>{entry.date}</time>
+                  </p>
+                )}
+                <div className={isImageArchive ? "journal-entry-artwork-copy" : undefined}>
+                  {isImageArchive && (
+                    <p className="journal-archive-entry__date">
+                      <time>{entry.date}</time>
+                    </p>
+                  )}
                   <h2>
                     <Link to={`/journal/${category.slug}/${entry.slug}`}>
                       {entry.title}
@@ -59,7 +95,8 @@ function JournalCategory() {
                   </Link>
                 </div>
               </article>
-            ))}
+              );
+            })}
           </div>
         )}
         <Link className="journal-back" to="/journal">

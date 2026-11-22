@@ -3,6 +3,8 @@ export type JournalEntry = {
   title: string;
   date: string;
   description: string;
+  poster?: string;
+  cover?: string;
   inspiration?: {
     author: string;
     work: string;
@@ -29,60 +31,79 @@ export const journalCategories: JournalCategory[] = [
     title: "Films",
     description: "Films that stay with me, organized by emotion and memory.",
     intro: "A small archive of films, feelings, and scenes worth returning to.",
+    entries: [],
+  },
+  {
+    slug: "film-notes",
+    title: "Film Notes",
+    description:
+      "A space for future writing about the images, ideas, and moments that linger.",
+    intro: "A space for future writing about the images, ideas, and moments that linger.",
+    parentSlug: "films",
     entries: [
-      {
-        slug: "film-notes",
-        title: "Film Notes",
-        date: "Date to come",
-        description:
-          "A space for future writing about the images, ideas, and moments that linger.",
-        body: placeholderBody,
-      },
-      {
-        slug: "scenes-that-stay",
-        title: "Scenes That Stay",
-        date: "Date to come",
-        description:
-          "A future collection of memorable scenes and the details that make them resonate.",
-        body: placeholderBody,
-      },
       {
         slug: "after-love-2020",
         title: "After Love",
         date: "Date to come",
         description: "2020",
+        poster: `${import.meta.env.BASE_URL}images/films/AfterLove.jpg`,
         body: [
           "清澈的空气中闪烁着清新的星，树梢上是静谧的柠檬和璀璨的蝉鸣。今天是满月，在Pakistan，在Lahore，这座爱之城。Mary，许我问你，在今夜，你是否也在同我望着一样的月，并满心欢喜？",
         ],
       },
+      {
+        slug: "all-quiet-on-the-western-front-2022",
+        title: "All Quiet on the Western Front",
+        date: "Date to come",
+        description: "2022",
+        poster: `${import.meta.env.BASE_URL}images/films/AllQuiteOnTheWesternFront.jpg`,
+        body: [
+          '"Will you think of me when west wind blows,',
+          "upon the field of poppies.",
+          "Will you speak of my name,",
+          'say a prayer for me."',
+          "——《In Flanders Fields》",
+        ],
+      },
     ],
+  },
+  {
+    slug: "scenes-that-stay",
+    title: "Scenes That Stay",
+    description:
+      "A future collection of memorable scenes and the details that make them resonate.",
+    intro:
+      "A future collection of memorable scenes and the details that make them resonate.",
+    parentSlug: "films",
+    entries: [],
   },
   {
     slug: "books",
     title: "Books",
     description: "Reading notes, favorite passages, and books worth revisiting.",
     intro: "Reading notes and passages gathered along the way.",
+    entries: [],
+  },
+  {
+    slug: "books-i-return-to",
+    title: "Books I Return To",
+    description: "A place to write about books that invite another reading.",
+    intro: "A place to write about books that invite another reading.",
+    parentSlug: "books",
+    entries: [],
+  },
+  {
+    slug: "reading-notes",
+    title: "Reading Notes",
+    description: "A quiet archive for future passages, annotations, and reading notes.",
+    intro: "A quiet archive for future passages, annotations, and reading notes.",
+    parentSlug: "books",
     entries: [
-      {
-        slug: "books-i-return-to",
-        title: "Books I Return To",
-        date: "Date to come",
-        description:
-          "A place to write about books that invite another reading.",
-        body: placeholderBody,
-      },
-      {
-        slug: "reading-notes",
-        title: "Reading Notes",
-        date: "Date to come",
-        description:
-          "A quiet archive for future passages, annotations, and reading notes.",
-        body: placeholderBody,
-      },
       {
         slug: "the-dangerous-summer",
         title: "A Dangerous Summer",
         date: "2012-04-06",
+        cover: `${import.meta.env.BASE_URL}images/books/TheDangerousSummer.jpg`,
         description: "Ernest Hemingway",
         body: [
           "夏之危险，在于欢笑纵情掩盖沉默冷静，阳光炙烈不容阴郁喘息。在于触目的鲜血总会被及时清洗，在于被掌控情绪的观众渴望着每一个美轮美奂的死亡之来临。",
@@ -98,6 +119,7 @@ export const journalCategories: JournalCategory[] = [
         slug: "ru-ti-qing-ren",
         title: "情人",
         date: "2015-11-11",
+        cover: `${import.meta.env.BASE_URL}images/books/L'Amant.jpg`,
         description: "After Marguerite Duras’s The Lover",
         inspiration: {
           author: "Marguerite Duras",
@@ -153,7 +175,7 @@ export const journalCategories: JournalCategory[] = [
           "也許是我的錯覺而已。",
           "記得有一次他曾問她，五年後他們會是什麼樣子？她緘默不語。對於不可知的未來，她並無太多打算，但她想她還會記得他，在熙攘的人群中，在錯身偶遇的街道上，第一眼認出他來。那些曾經歡笑著的，平靜的，惱怒的，憂傷的，啜泣著的情人的臉，不斷湧上，將她一層層包裹起來...",
         ],
-      },
+      }
     ],
   },
   {
