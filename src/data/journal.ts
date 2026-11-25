@@ -175,7 +175,15 @@ export const journalCategories: JournalCategory[] = [
           "也許是我的錯覺而已。",
           "記得有一次他曾問她，五年後他們會是什麼樣子？她緘默不語。對於不可知的未來，她並無太多打算，但她想她還會記得他，在熙攘的人群中，在錯身偶遇的街道上，第一眼認出他來。那些曾經歡笑著的，平靜的，惱怒的，憂傷的，啜泣著的情人的臉，不斷湧上，將她一層層包裹起來...",
         ],
-      }
+      },
+      {
+        slug: "wanshou-temple",
+        title: "万寿寺",
+        date: "Date to come",
+        cover: `${import.meta.env.BASE_URL}images/books/万寿寺.jpg`,
+        description: "王小波",
+        body: [],
+      },
     ],
   },
   {
