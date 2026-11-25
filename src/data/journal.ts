@@ -240,13 +240,23 @@ export const journalCategories: JournalCategory[] = [
           "A place for future short essays and thoughts still taking shape.",
         body: placeholderBody,
       },
+    ],
+  },
+  {
+    slug: "everyday-observations",
+    title: "Everyday Observations",
+    description: "Personal observations and reflections.",
+    intro: "Personal observations and reflections.",
+    parentSlug: "reflections",
+    entries: [
       {
-        slug: "everyday-observations",
-        title: "Everyday Observations",
-        date: "Date to come",
-        description:
-          "An open space for noticing and writing about ordinary moments.",
-        body: placeholderBody,
+        slug: "huang-event-thoughts",
+        title: "关于黄事件的一些想法",
+        date: "November 25, 2026",
+        description: "英伟达事件",
+        body: [
+          "黄的突然离开和重回宝座，乃至于股市剧本反转之迅猛给人的whiplash， 真的像极了一出闹剧。 Trump和硅谷富豪在背后穿针引线，说不定利用内幕交易又大捞一笔， 当然这只是我捕风捉影般的论调而已。前日黄的复职已经引发国会对华鹰派议员的挞伐。待明年一月，反ai反数据中心的民主党激进派议员上台，估计又是一场血雨腥风的较量，劫富济贫的后果就是共同贫穷。反观这次期中选举，不少民主党政客利用民众对AI和资料中心的恐惧排斥心理造势，而获得巨大的优势。一边用自己制定的规则抢夺，一边豢养纽时等自由派主流媒体抹黑政敌。精英和信众都浸泡在自我营造的道德优越感泡泡里。 他们懂得愤怒，反对，演戏，却不提解决方案，这是选举政治的痼疾。 如果说疫情的初始， 我对这一切的手法感到新鲜，更不必谈我曾经拥有的美国是灯塔一般照耀万物的幼稚信念； 其实最终都是经济决定万物。 美国没有之前那么的强盛和辉煌了，在势力重新分割的时候，必会是不安定的时代。只是这个时代让人感到疲惫不堪而恐惧，让我们见识到曾经风度翩翩的政客撤下面具，顺手拿起我们最珍贵的信心和勇气，用于在道德底线搏杀之武器；也让我们见识到普罗的精英大众在AI浪潮和知识领域同化后个人边界和定位的消失，随之而来的放弃抵抗，麻木萎靡，以及理想主义的一点点消亡。",
+        ],
       },
     ],
   },

@@ -24,7 +24,7 @@ function JournalCategory() {
         title={category.title}
         intro={category.intro}
       >
-        {childCategories.length > 0 ? (
+        {childCategories.length > 0 && (
           <div
             className="journal-categories"
             aria-label={`${category.title} categories`}
@@ -40,7 +40,8 @@ function JournalCategory() {
               </Link>
             ))}
           </div>
-        ) : (
+        )}
+        {category.entries.length > 0 && (
           <div className="journal-archive">
             {category.entries.map((entry) => {
               const imageSource = entry.cover ?? entry.poster;
