@@ -200,6 +200,14 @@ export const journalCategories: JournalCategory[] = [
           "通过他的随笔，了解到他的风骨和易趣，了解到我不甚熟知的上个世代，那些轰轰烈烈的事情，如果你没有亲身经历，怎会知道在那个年代，是怎样地影响当时代的人。有时会想，也许我们这一代，未必会和平终老，在历史的影像册里，我们会是被怎样提及？"
         ],
       },
+      {
+        slug: "shan-liu-cixin",
+        title: "山",
+        date: "",
+        cover: `${import.meta.env.BASE_URL}images/books/山.jpeg`,
+        description: "刘慈欣",
+        body: [],
+      },
     ],
   },
   {
